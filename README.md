@@ -16,12 +16,11 @@ npm i
 npm run serve
 ```
 
-### Run client app HTTP server
+### Run client app HTTP server and connect
 ```console
 cd client/dist
 ```
 ```console
 http-server
 ```
-
-### Game client running at localhost:8080
+Navigate to http://localhost:8080 on your browser to play
