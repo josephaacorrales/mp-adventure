@@ -5,17 +5,20 @@ StandardJS code style
 ## Development and Usage
 Development requires Node.js and a web browser
 
-### Step 1
-Install application dependencies
+### Install application dependencies
 ```console
 npm i
 ```
 
-### Step 2
-Start game server
+### Start game server
 ```console
 npm run start
 ```
 
-### Step 3
-Navigate to localhost:3000 on your browser
+### Run client http server
+```console
+cd client/dist
+```
+```console
+http-server
+```
