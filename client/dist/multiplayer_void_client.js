@@ -5,7 +5,7 @@ class Scene extends Phaser.Scene {
   constructor () {
     super()
     this.players = new Map()
-    this.socket = io('ws://127.0.0.1:3000',  { transports : ['websocket'] })
+    this.socket = io()
   }
 
   preload () {
@@ -46,13 +46,15 @@ class Scene extends Phaser.Scene {
 }
 
 const config = {
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 1280,
-    height: 720
-  },
-  scene: [Scene]
+    type: Phaser.CANVAS,
+    parent: 'multiplayer-void-parent',
+    canvas: document.getElementById('the-multiplayer-void'),
+    scale: {
+      mode: Phaser.Scale.FIT,
+      height: 720,
+      width: 1280,
+    },
+    scene: [Scene]
 }
 
 window.addEventListener('load', () => {
