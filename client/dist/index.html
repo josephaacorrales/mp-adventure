@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-  </head>
-  <body>
-    <script src="lib/socket.io.min.js"></script>
-    <script src="lib/phaser.js"></script>
-    <script src="lib/snapshot-interpolation.js"></script>
-    <script type="module" src="./index.js"></script>
-  </body>
+    <link rel="stylesheet" href="lib/terminal.min.css"/>
+    <style>
+        #site-footer {
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+            background-color: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="site-header" class="terminal-nav">
+        <div class="terminal-logo">
+            <div class="logo terminal-prompt">
+                <a href="#">Continuous Games</a>
+            </div>
+        </div>
+    </div>
+    <nav id="site-nav" class="terminal-menu">
+        <ul>
+            <li>
+                <a href="#about" class="menu-item">About</a>
+            </li>
+            <li>
+                <a href="#multiplayer-void" class="menu-item">The Multiplayer Void</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="site-content">
+        <div><a name="about"></a></div>
+        <h2>About</h2>
+        <p>Web-based game projects created by Joseph Corrales. Created with Node.js, Phaser.js and Amazon Lightsail.</p>
+    </div>
+    <div>
+        <div><a name="multiplayer-void"></a></div>
+        <h2>The Multiplayer Void</h2>
+        <p>Navigate your capsule across the void with others using the arrow keys on your PC's keyboard.</p>
+        <div id="multiplayer-void-parent">
+            <canvas id="the-multiplayer-void"></canvas>
+        </div>
+    </div>
+    <div id="site-footer">
+        <p>&copy; 2022 Joseph Corrales. All rights reserved.</p>
+    </div>
+</div>
+<script src="lib/socket.io.min.js"></script>
+<script src="lib/phaser.js"></script>
+<script src="lib/snapshot-interpolation.js"></script>
+<script type="module" src="./game_client.js"></script>
+</body>
 </html>
