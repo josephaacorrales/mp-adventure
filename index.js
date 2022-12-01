@@ -1,9 +1,22 @@
-const server = require('http').createServer()
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const server = require('http').createServer(app)
+
+// enable socket.io on server
 const io = require('socket.io')(server, {
   cors: {
-    origin: '*', // set to your domain
+    origin: process.env.DOMAIN_NAME,
     methods: ['GET']
   }
+})
+
+// set static root directory
+app.use(express.static(__dirname + '/client/dist'))
+
+// server static root directory
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
 })
 
 // enables running phaser games on nodejs
